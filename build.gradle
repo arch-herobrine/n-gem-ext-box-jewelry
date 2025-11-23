@@ -151,7 +151,7 @@ dependencies {
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
 
-    implementation fg.deobf("curse.maven:n-gem-ext-box-1377742:7241686")
+    implementation fg.deobf("curse.maven:n-gem-ext-box-1377742:7245448")
 
     runtimeOnly fg.deobf("curse.maven:jei-238222:7245195")
 

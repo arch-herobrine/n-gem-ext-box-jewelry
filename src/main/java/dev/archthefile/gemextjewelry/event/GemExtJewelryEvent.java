@@ -1,6 +1,7 @@
 package dev.archthefile.gemextjewelry.event;
 
 import dev.archthefile.gemextjewelry.GemExtJewelry;
+import dev.archthefile.gemextjewelry.datagen.CuriosSlotProvider;
 import dev.archthefile.gemextjewelry.datagen.tag.BlockTagProvider;
 import dev.archthefile.gemextjewelry.datagen.tag.CuriosTagProvider;
 import dev.archthefile.gemextjewelry.datagen.tag.ItemTagProvider;
@@ -18,7 +19,7 @@ import java.util.concurrent.CompletableFuture;
 @Mod.EventBusSubscriber(modid = GemExtJewelry.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class GemExtJewelryEvent {
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event){
+    public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         boolean server = event.includeServer();
         boolean client = event.includeClient();
@@ -37,5 +38,7 @@ public class GemExtJewelryEvent {
                 server,
                 new CuriosTagProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper)
         );
+
+        generator.addProvider(server, new CuriosSlotProvider(GemExtJewelry.MODID, packOutput, existingFileHelper, lookupProvider));
     }
 }

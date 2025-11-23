@@ -11,6 +11,4 @@ public class GemExtJewelryRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, GemExtJewelry.MODID);
 
     public static RegistryObject<Item> GEM_RING = ITEMS.register("gem_ring", () -> new GemRingItem(new Item.Properties().stacksTo(1)));
-
-
 }
