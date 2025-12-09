@@ -35,12 +35,12 @@ public class ClientEvents {
         ModelResourceLocation emptyId = new ModelResourceLocation(new ResourceLocation(GemExtJewelry.MODID, "gem_ring"),"inventory");
         ModelResourceLocation setId = new ModelResourceLocation(new ResourceLocation(GemExtJewelry.MODID, "gem_ring_set"),"inventory");
 
-        replaceModelIfPresent(models, emptyId, emptyId, true, event.getModelBakery());
-        replaceModelIfPresent(models, emptyId, setId, false, event.getModelBakery());
+        replaceModelIfPresent(models, emptyId, true, event.getModelBakery());
+        replaceModelIfPresent(models, setId, false, event.getModelBakery());
     }
 
-    private static void replaceModelIfPresent(Map<ResourceLocation, BakedModel> models, ResourceLocation origId, ResourceLocation id, boolean isBase, ModelBakery bake) {
-        BakedModel orig = models.get(origId);
+    private static void replaceModelIfPresent(Map<ResourceLocation, BakedModel> models, ResourceLocation id, boolean isBase, ModelBakery bake) {
+        BakedModel orig = models.get(id);
         if (orig == null) {
             GemExtJewelry.LOGGER.debug("model not found for id=" + id);
             return;
