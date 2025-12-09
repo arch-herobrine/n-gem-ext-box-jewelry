@@ -22,6 +22,12 @@ import java.util.Map;
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientEvents {
     @SubscribeEvent
+    public static void onRegisterAdditionalModels(ModelEvent.RegisterAdditional event) {
+        GemExtJewelry.LOGGER.debug("Register Models");
+        event.register(new ModelResourceLocation(new ResourceLocation(GemExtJewelry.MODID, "gem_ring_set"),"inventory"));
+    }
+
+    @SubscribeEvent
     public static void onModifyBakingResult(ModelEvent.ModifyBakingResult event) {
         Map<ResourceLocation, BakedModel> models = event.getModels();
 
