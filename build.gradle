@@ -153,7 +153,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:n-gem-ext-box-1377742:7270448")
 
-    runtimeOnly fg.deobf("curse.maven:jei-238222:7245195")
+    implementation fg.deobf("curse.maven:jei-238222:7270446")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     compileOnly annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0")

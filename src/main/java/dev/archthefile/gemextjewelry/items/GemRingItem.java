@@ -3,16 +3,21 @@ package dev.archthefile.gemextjewelry.items;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.UUID;
 
+@SuppressWarnings("removal")
 public class GemRingItem extends Item implements ICurioItem {
     public GemRingItem(Properties pProperties) {
         super(pProperties);
@@ -34,6 +39,19 @@ public class GemRingItem extends Item implements ICurioItem {
             }
         }
         return builder.build();
+    }
+
+    @Override
+    public @NotNull Component getName(ItemStack stack) {
+        if (stack.hasTag() && stack.getTag().contains("gemextjewelry:gem")) {
+            String gemId = stack.getTag().getString("gemextjewelry:gem");
+            Item gem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(gemId));
+            if (gem != null) {
+                Component gemName = Component.translatable(gem.getDescriptionId());
+                return Component.translatable("item.gemextjewelry.gem_ring", gemName);
+            }
+        }
+        return Component.translatable("item.gemextjewelry.empty_ring");
     }
 }
 

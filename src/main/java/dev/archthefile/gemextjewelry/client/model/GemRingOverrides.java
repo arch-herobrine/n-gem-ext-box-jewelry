@@ -12,7 +12,6 @@ public class GemRingOverrides extends ItemOverrides {
 
     @Override
     public BakedModel resolve(BakedModel originalModel, ItemStack stack, ClientLevel world, LivingEntity entity, int seed) {
-        GemExtJewelry.LOGGER.debug("resolve called: " + stack);
         return GemRingModelManager.getModelFor(stack);
     }
 }

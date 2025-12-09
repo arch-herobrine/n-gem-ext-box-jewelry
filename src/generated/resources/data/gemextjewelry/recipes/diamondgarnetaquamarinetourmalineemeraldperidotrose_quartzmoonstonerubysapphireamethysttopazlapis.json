@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "tag": "ngemextboxmod:combine_gems"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GNG",
+    "GGG"
+  ],
+  "result": {
+    "item": "gemextjewelry:diamondgarnetaquamarinetourmalineemeraldperidotrose_quartzmoonstonerubysapphireamethysttopazlapis"
+  },
+  "show_notification": true
+}
