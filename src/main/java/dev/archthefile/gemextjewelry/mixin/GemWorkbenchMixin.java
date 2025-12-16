@@ -12,7 +12,10 @@ import org.spongepowered.asm.mixin.injection.At;
 @Debug(export = true)
 @Mixin(targets = "com.Nuaah.NGemExtBoxMod.block.gui.container.GemstoneWorkbenchMenu$1", remap = false)
 public class GemWorkbenchMixin {
-    @ModifyReturnValue(method = "mayPlace", at = @At("RETURN"))
+    @ModifyReturnValue(
+            method = "mayPlace",
+            at = @At("RETURN")
+    )
     private boolean modifyMayPlace(boolean original, ItemStack stack, @Local(name = "combineSlot") ItemStack combineSlot) {
         if (combineSlot.getItem() instanceof GemCharmItem) {
             return stack.is(NGemExtBoxModTags.Items.COMBINE_GEMS);

@@ -33,7 +33,8 @@ public class EffectHandlerMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/entity/player/Player;getArmorSlots()Ljava/lang/Iterable;",
-                    shift = At.Shift.BEFORE
+                    shift = At.Shift.BEFORE,
+                    remap = true
             )
     )
     private static void injectOnPlayerTick(
@@ -118,7 +119,8 @@ public class EffectHandlerMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/entity/player/Player;getArmorSlots()Ljava/lang/Iterable;",
-                    shift = At.Shift.BEFORE
+                    shift = At.Shift.BEFORE,
+                    remap = true
             )
     )
     private static void injectOnLivingFall(
@@ -166,7 +168,8 @@ public class EffectHandlerMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/item/ItemStack;getCapability(Lnet/minecraftforge/common/capabilities/Capability;)Lnet/minecraftforge/common/util/LazyOptional;",
-                    shift = At.Shift.BEFORE
+                    shift = At.Shift.BEFORE,
+                    remap = true
             )
     )
     private static void injectOnAttackEntity(
@@ -214,7 +217,8 @@ public class EffectHandlerMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/entity/player/Player;getArmorSlots()Ljava/lang/Iterable;",
-                    shift = At.Shift.BEFORE
+                    shift = At.Shift.BEFORE,
+                    remap = true
             )
     )
     private static void injectBonusFireArmor(
@@ -263,7 +267,8 @@ public class EffectHandlerMixin {
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/item/ItemStack;getCapability(Lnet/minecraftforge/common/capabilities/Capability;)Lnet/minecraftforge/common/util/LazyOptional;",
                     shift = At.Shift.BEFORE,
-                    ordinal = 1
+                    ordinal = 1,
+                    remap = true
             )
     )
     private static void injectBonusPoison(
@@ -311,7 +316,8 @@ public class EffectHandlerMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/item/ItemStack;getCapability(Lnet/minecraftforge/common/capabilities/Capability;)Lnet/minecraftforge/common/util/LazyOptional;",
-                    shift = At.Shift.BEFORE
+                    shift = At.Shift.BEFORE,
+                    remap = true
             )
     )
     private static void injectOnBreakSpeed(
@@ -359,7 +365,8 @@ public class EffectHandlerMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/item/ItemStack;getCapability(Lnet/minecraftforge/common/capabilities/Capability;)Lnet/minecraftforge/common/util/LazyOptional;",
-                    shift = At.Shift.BEFORE
+                    shift = At.Shift.BEFORE,
+                    remap = true
             )
     )
     private static void injectOnExperienceDrop(
