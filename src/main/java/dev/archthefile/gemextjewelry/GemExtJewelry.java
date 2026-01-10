@@ -23,5 +23,6 @@ public class GemExtJewelry {
 
         GemExtJewelryRegistry.ITEMS.register(bus);
         GemExtJewelryRegistry.RECIPE_SERIALIZER.register(bus);
+        GemExtJewelryRegistry.MOD_TABS.register(bus);
     }
 }
